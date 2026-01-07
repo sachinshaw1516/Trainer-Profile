@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Kumar | Professional IT Trainer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --dark-gray: #1a1a1a;
+            --medium-gray: #4a4a4a;
+            --light-gray: #e8e8e8;
+            --accent-blue: #2563eb;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --white: #ffffff;
+            --off-white: #f9fafb;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--off-white);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .main-header {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .logo span {
+            color: var(--accent-blue);
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--accent-blue);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.92)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+        }
+        
+        .expertise-tag {
+            background-color: rgba(37, 99, 235, 0.1);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .tag-linux {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+        
+        .tag-sql {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+        
+        .tag-aws {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+        
+        .tag-excel {
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
+            background-color: rgba(139, 92, 246, 0.1);
+        }
+        
+        .expertise-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tag-linux:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+        
+        .tag-sql:hover {
+            background-color: var(--accent-green);
+            color: var(--white);
+        }
+        
+        .tag-aws:hover {
+            background-color: var(--accent-orange);
+            color: var(--white);
+        }
+        
+        .tag-excel:hover {
+            background-color: var(--accent-purple);
+            color: var(--white);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent-blue);
+            margin-top: 15px;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 70px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-gray);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            border-radius: 2px;
+        }
+        
+        /* Profile Card */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--off-white);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-blue);
+        }
+        
+        .profile-icon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-right: 40px;
+            border: 4px solid var(--accent-blue);
+            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .profile-icon i {
+            font-size: 4rem;
+            color: var(--accent-blue);
+        }
+        
+        .profile-info h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--dark-gray);
+        }
+        
+        .profile-info h3 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 12px;
+        }
+        
+        .profile-info p {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--medium-gray);
+        }
+        
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+            margin: 10px;
+            padding: 25px 15px;
+            background-color: var(--off-white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--accent-blue);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-8px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+            font-family: 'Roboto Slab', serif;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            font-weight: 600;
+        }
+        
+        /* Training Sessions */
+        .training-sessions {
+            margin-bottom: 50px;
+        }
+        
+        .session-card {
+            background-color: var(--off-white);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-blue);
+            transition: var(--transition);
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .session-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.6rem;
+            color: var(--dark-gray);
+        }
+        
+        .session-date {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .session-location {
+            color: var(--accent-blue);
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .session-location i {
+            margin-right: 8px;
+        }
+        
+        /* Syllabus Tabs */
+        .syllabus-tabs {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .syllabus-tab {
+            padding: 12px 24px;
+            background-color: var(--off-white);
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .syllabus-tab i {
+            margin-right: 8px;
+        }
+        
+        .syllabus-tab.active {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border-color: var(--accent-blue);
+        }
+        
+        .syllabus-tab-linux.active {
+            background-color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+        
+        .syllabus-tab-sql.active {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .syllabus-tab-aws.active {
+            background-color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+        
+        .syllabus-tab-excel.active {
+            background-color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+        
+        /* Syllabus Content */
+        .syllabus-content {
+            display: none;
+            background-color: var(--off-white);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+        
+        .syllabus-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .syllabus-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .syllabus-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2rem;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+        }
+        
+        .syllabus-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .linux-icon {
+            color: var(--accent-blue);
+        }
+        
+        .sql-icon {
+            color: var(--accent-green);
+        }
+        
+        .aws-icon {
+            color: var(--accent-orange);
+        }
+        
+        .excel-icon {
+            color: var(--accent-purple);
+        }
+        
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .topic-category {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+        
+        .topic-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .topic-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            border-bottom: 2px solid;
+            padding-bottom: 8px;
+        }
+        
+        .linux-category h3 {
+            border-color: var(--accent-blue);
+        }
+        
+        .sql-category h3 {
+            border-color: var(--accent-green);
+        }
+        
+        .aws-category h3 {
+            border-color: var(--accent-orange);
+        }
+        
+        .excel-category h3 {
+            border-color: var(--accent-purple);
+        }
+        
+        .topic-category ul {
+            list-style-type: none;
+        }
+        
+        .topic-category li {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .topic-category i {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .linux-category i {
+            color: var(--accent-blue);
+        }
+        
+        .sql-category i {
+            color: var(--accent-green);
+        }
+        
+        .aws-category i {
+            color: var(--accent-orange);
+        }
+        
+        .excel-category i {
+            color: var(--accent-purple);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--dark-gray);
+            padding: 70px 0;
+            color: var(--white);
+        }
+        
+        .testimonials-section .section-title {
+            color: var(--white);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+        
+        .testimonial-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 35px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .testimonial-item.active {
+            opacity: 1;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: "“";
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            position: absolute;
+            top: -25px;
+            left: -10px;
+            font-family: Georgia, serif;
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-org {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .nav-dot.active {
+            background-color: var(--accent-blue);
+            transform: scale(1.2);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 50px 0 25px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-blue);
+            padding-left: 8px;
+        }
+        
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-right: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 35px 25px;
+            }
+            
+            .profile-icon {
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .syllabus-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-top: 15px;
+            }
+            
+            .contact-info p {
+                justify-content: center;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .expertise-tag {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stats-container {
+                justify-content: center;
+            }
+            
+            .session-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .session-date {
+                margin-top: 8px;
+            }
+            
+            .syllabus-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .syllabus-tab {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .profile-card {
+                padding: 25px 20px;
+            }
+            
+            .syllabus-content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">Freel<span>ancer</span></div>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 7888719163</p>
+                <p><i class="fas fa-envelope"></i> sachinkr1620@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container hero-content">
+            <h1 class="hero-title">Sachin Kumar</h1>
+            <p class="hero-subtitle">Professional Linux System Administrator & Corporate Trainer</p>
+            <p>With <span class="highlight">3+ years</span> of hands-on Linux administration experience and <span class="highlight">4 years</span> as a freelance trainer, delivering high-impact technical training programs.</p>
+            
+            <div class="expertise-tags">
+                <a class="expertise-tag tag-linux" href="#linux-syllabus">Linux System Administration</a>
+                <a class="expertise-tag tag-sql" href="#sql-syllabus">RDBMS & SQL</a>
+                <a class="expertise-tag tag-aws" href="#aws-syllabus">AWS Cloud</a>
+                <a class="expertise-tag tag-excel" href="#excel-syllabus">Advanced Excel</a>
+            </div>
+            
+            <a href="#contact" class="cta-button">Schedule a Training Session</a>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile-icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="profile-info">
+                <h2>Sachin Kumar</h2>
+                <h3>Linux, AWS, DevOps, Excel & RDBMS Trainer</h3>
+                <p>Results-driven Linux System Administrator with over 3 years of hands-on experience in administering Linux servers, automating deployments with Ansible, and ensuring high availability and security in production environments.</p>
+                <p>Currently working as Server Administrator at <strong>Noida International Airport</strong> with previous experience at <strong>ACME Web Technology, Delhi</strong>. Freelance Trainer with 4 years of experience delivering high-impact training programs.</p>
+                <p>Specialized in Linux Administration, Automation & Scripting, Security Hardening, Network Services, and Cloud Integration.</p>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <h2 class="section-title">Professional Highlights</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-text">Years Linux Admin Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-text">Years as Freelance Trainer</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-text">Professionals Trained</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-text">Corporate Training Sessions</div>
+            </div>
+        </div>
+        
+        <!-- Recent Training Sessions -->
+        <h2 class="section-title">Recent Training Sessions</h2>
+        <div class="training-sessions">
+            <div class="session-card">
+                <div class="session-header">
+                    <h3 class="session-title">Linux System Administration Training</h3>
+                    <div class="session-date">14th Nov - 27th Nov, 2025</div>
+                </div>
+                <div class="session-location">
+                    <i class="fas fa-map-marker-alt"></i> Sri Krishna College of Technology, Coimbatore
+                </div>
+                <p>Delivered comprehensive offline Linux training covering Linux architecture, user management, file permissions, process management, shell scripting, network services, and security hardening with hands-on labs.</p>
+            </div>
+            
+            <div class="session-card">
+                <div class="session-header">
+                    <h3 class="session-title">Linux Training for Indian Air Force Officers</h3>
+                    <div class="session-date">29th Sep - 10th Oct, 2025</div>
+                </div>
+                <div class="session-location">
+                    <i class="fas fa-map-marker-alt"></i> Directorate of Information Technology, Delhi Secretariat, New Delhi
+                </div>
+                <p>Conducted specialized Linux administration training for Indian Air Force officers focusing on secure system administration, network services configuration, security hardening, and automation for defense applications.</p>
+            </div>
+        </div>
+        
+        <!-- Syllabus Section -->
+        <h2 class="section-title">Training Syllabus</h2>
+        
+        <!-- Syllabus Tabs -->
+        <div class="syllabus-tabs">
+            <div class="syllabus-tab syllabus-tab-linux active" data-target="linux-syllabus">
+                <i class="fab fa-linux"></i> Linux System Administration
+            </div>
+            <div class="syllabus-tab syllabus-tab-sql" data-target="sql-syllabus">
+                <i class="fas fa-database"></i> RDBMS & SQL
+            </div>
+            <div class="syllabus-tab syllabus-tab-aws" data-target="aws-syllabus">
+                <i class="fab fa-aws"></i> AWS Cloud
+            </div>
+            <div class="syllabus-tab syllabus-tab-excel" data-target="excel-syllabus">
+                <i class="fas fa-file-excel"></i> Advanced Excel
+            </div>
+        </div>
+        
+        <!-- Linux Syllabus -->
+        <div class="syllabus-content active" id="linux-syllabus">
+            <div class="syllabus-header">
+                <div class="syllabus-icon linux-icon">
+                    <i class="fab fa-linux"></i>
+                </div>
+                <h2 class="syllabus-title">Linux System Administration Syllabus</h2>
+                <p>Complete 12-day training program covering installation, administration, security, and automation</p>
+            </div>
+            
+            <div class="syllabus-grid">
+                <div class="topic-category linux-category">
+                    <h3>Linux Basics & Installation</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Linux Architecture & Distributions</li>
+                        <li><i class="fas fa-check"></i> Virtual Machine & ISO Setup</li>
+                        <li><i class="fas fa-check"></i> Manual Disk Partitioning</li>
+                        <li><i class="fas fa-check"></i> File System Navigation</li>
+                        <li><i class="fas fa-check"></i> Directory & File Management</li>
+                        <li><i class="fas fa-check"></i> Hands-on Practice Sessions</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>User & Group Management</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> User Account Creation & Management</li>
+                        <li><i class="fas fa-check"></i> Group Creation & Management</li>
+                        <li><i class="fas fa-check"></i> File & Directory Permissions</li>
+                        <li><i class="fas fa-check"></i> Password Policies & Expiry</li>
+                        <li><i class="fas fa-check"></i> Access Control & Auditing</li>
+                        <li><i class="fas fa-check"></i> Best Practices for Security</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>File Permissions & Ownership</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> chmod, chown, chgrp Commands</li>
+                        <li><i class="fas fa-check"></i> Permission Models (Numeric & Symbolic)</li>
+                        <li><i class="fas fa-check"></i> Special Bits (setuid, setgid, sticky)</li>
+                        <li><i class="fas fa-check"></i> Access Control Lists (ACLs)</li>
+                        <li><i class="fas fa-check"></i> Ownership Changes</li>
+                        <li><i class="fas fa-check"></i> Permission Troubleshooting</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>Services & Process Management</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Package Installation & Upgrade</li>
+                        <li><i class="fas fa-check"></i> Process Signals & Control</li>
+                        <li><i class="fas fa-check"></i> System Activity Monitoring</li>
+                        <li><i class="fas fa-check"></i> Service Management (systemd)</li>
+                        <li><i class="fas fa-check"></i> Performance Tuning</li>
+                        <li><i class="fas fa-check"></i> System Logs Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>Automation & Scripting</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Bash Scripting Fundamentals</li>
+                        <li><i class="fas fa-check"></i> Conditional Logic & Loops</li>
+                        <li><i class="fas fa-check"></i> Cron Jobs for Scheduling</li>
+                        <li><i class="fas fa-check"></i> One-time Jobs with 'at'</li>
+                        <li><i class="fas fa-check"></i> Ansible for Multi-system Automation</li>
+                        <li><i class="fas fa-check"></i> GenAI-powered Automation</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>Network Services & Security</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Network Diagnostics & Troubleshooting</li>
+                        <li><i class="fas fa-check"></i> Hostnames & Name Resolution (DNS)</li>
+                        <li><i class="fas fa-check"></i> DHCP Setup & Configuration</li>
+                        <li><i class="fas fa-check"></i> Apache Web Hosting</li>
+                        <li><i class="fas fa-check"></i> SELinux Security & Modes</li>
+                        <li><i class="fas fa-check"></i> Firewall Configuration (UFW)</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>Backup & Data Protection</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full & Incremental Backups with tar</li>
+                        <li><i class="fas fa-check"></i> Backup Scripts with Cron</li>
+                        <li><i class="fas fa-check"></i> Rsync Automation</li>
+                        <li><i class="fas fa-check"></i> Btrfs Snapshots</li>
+                        <li><i class="fas fa-check"></i> Disk Imaging with dd</li>
+                        <li><i class="fas fa-check"></i> File & System Restore Methods</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category linux-category">
+                    <h3>Advanced Topics</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Centralized Logging & Monitoring</li>
+                        <li><i class="fas fa-check"></i> Disk Encryption with LUKS</li>
+                        <li><i class="fas fa-check"></i> RAID Configuration (0,1,5,6,10)</li>
+                        <li><i class="fas fa-check"></i> LVM Management</li>
+                        <li><i class="fas fa-check"></i> Kernel Tuning & Optimization</li>
+                        <li><i class="fas fa-check"></i> Performance Benchmarking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SQL Syllabus -->
+        <div class="syllabus-content" id="sql-syllabus">
+            <div class="syllabus-header">
+                <div class="syllabus-icon sql-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="syllabus-title">RDBMS & SQL Syllabus</h2>
+                <p>Complete database training covering SQL fundamentals, queries, optimization, and administration</p>
+            </div>
+            
+            <div class="syllabus-grid">
+                <div class="topic-category sql-category">
+                    <h3>Database Fundamentals</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> SQL & DBMS Concepts</li>
+                        <li><i class="fas fa-check"></i> Relational Model & Theory</li>
+                        <li><i class="fas fa-check"></i> Datatypes & Constraints</li>
+                        <li><i class="fas fa-check"></i> Normalization (1NF to BCNF)</li>
+                        <li><i class="fas fa-check"></i> Entity Relationship Diagrams</li>
+                        <li><i class="fas fa-check"></i> Database Design Principles</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>SQL Statements</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> DDL (CREATE, ALTER, DROP)</li>
+                        <li><i class="fas fa-check"></i> DML (INSERT, UPDATE, DELETE)</li>
+                        <li><i class="fas fa-check"></i> TCL (COMMIT, ROLLBACK, SAVEPOINT)</li>
+                        <li><i class="fas fa-check"></i> DCL (GRANT, REVOKE)</li>
+                        <li><i class="fas fa-check"></i> DQL (SELECT Queries)</li>
+                        <li><i class="fas fa-check"></i> Transaction Management</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Query Operations</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Projection & Selection</li>
+                        <li><i class="fas fa-check"></i> Expressions & Aliases</li>
+                        <li><i class="fas fa-check"></i> Operators & Filtering</li>
+                        <li><i class="fas fa-check"></i> WHERE vs HAVING Clause</li>
+                        <li><i class="fas fa-check"></i> GROUP BY & Aggregate Functions</li>
+                        <li><i class="fas fa-check"></i> ORDER BY & DISTINCT</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Advanced Queries</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Single Row Sub-queries</li>
+                        <li><i class="fas fa-check"></i> Multi Row Sub-queries</li>
+                        <li><i class="fas fa-check"></i> Correlated Sub-queries</li>
+                        <li><i class="fas fa-check"></i> Nested Sub-queries</li>
+                        <li><i class="fas fa-check"></i> IN, EXISTS Operators</li>
+                        <li><i class="fas fa-check"></i> CASE Expressions</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Joins & Relationships</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> INNER / EQUI Joins</li>
+                        <li><i class="fas fa-check"></i> LEFT, RIGHT, FULL OUTER Joins</li>
+                        <li><i class="fas fa-check"></i> CROSS / CARTESIAN Joins</li>
+                        <li><i class="fas fa-check"></i> SELF Joins</li>
+                        <li><i class="fas fa-check"></i> NATURAL Joins</li>
+                        <li><i class="fas fa-check"></i> Employee-Manager Relations</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Functions & Optimization</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Single Row Functions (String, Date, Number)</li>
+                        <li><i class="fas fa-check"></i> Aggregate Functions (SUM, AVG, COUNT)</li>
+                        <li><i class="fas fa-check"></i> Analytical Functions (ROW_NUMBER, RANK)</li>
+                        <li><i class="fas fa-check"></i> Indexing Strategies</li>
+                        <li><i class="fas fa-check"></i> Query Optimization</li>
+                        <li><i class="fas fa-check"></i> Performance Tuning</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Practical Applications</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Real-world Case Studies</li>
+                        <li><i class="fas fa-check"></i> Database Design Projects</li>
+                        <li><i class="fas fa-check"></i> Data Migration Strategies</li>
+                        <li><i class="fas fa-check"></i> Backup & Recovery Procedures</li>
+                        <li><i class="fas fa-check"></i> Security & User Management</li>
+                        <li><i class="fas fa-check"></i> Reporting & Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category sql-category">
+                    <h3>Advanced Topics</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Views & Materialized Views</li>
+                        <li><i class="fas fa-check"></i> Stored Procedures & Functions</li>
+                        <li><i class="fas fa-check"></i> Triggers & Events</li>
+                        <li><i class="fas fa-check"></i> PL/SQL Basics</li>
+                        <li><i class="fas fa-check"></i> NoSQL Introduction</li>
+                        <li><i class="fas fa-check"></i> Cloud Databases Overview</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AWS Syllabus -->
+        <div class="syllabus-content" id="aws-syllabus">
+            <div class="syllabus-header">
+                <div class="syllabus-icon aws-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <h2 class="syllabus-title">AWS Cloud Syllabus</h2>
+                <p>Comprehensive AWS training covering core services, architecture, security, and best practices</p>
+            </div>
+            
+            <div class="syllabus-grid">
+                <div class="topic-category aws-category">
+                    <h3>AWS Fundamentals</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Cloud Computing Concepts</li>
+                        <li><i class="fas fa-check"></i> AWS Global Infrastructure</li>
+                        <li><i class="fas fa-check"></i> AWS Account Setup & Billing</li>
+                        <li><i class="fas fa-check"></i> AWS Management Console</li>
+                        <li><i class="fas fa-check"></i> AWS CLI & SDK Setup</li>
+                        <li><i class="fas fa-check"></i> IAM (Identity & Access Management)</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Compute Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> EC2 Instances & AMIs</li>
+                        <li><i class="fas fa-check"></i> Elastic Load Balancing (ELB)</li>
+                        <li><i class="fas fa-check"></i> Auto Scaling Groups</li>
+                        <li><i class="fas fa-check"></i> AWS Lambda (Serverless)</li>
+                        <li><i class="fas fa-check"></i> Elastic Beanstalk</li>
+                        <li><i class="fas fa-check"></i> Lightsail for Simple Applications</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Storage Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> S3 (Simple Storage Service)</li>
+                        <li><i class="fas fa-check"></i> EBS (Elastic Block Store)</li>
+                        <li><i class="fas fa-check"></i> EFS (Elastic File System)</li>
+                        <li><i class="fas fa-check"></i> Glacier for Archiving</li>
+                        <li><i class="fas fa-check"></i> Storage Gateway</li>
+                        <li><i class="fas fa-check"></i> Backup & Disaster Recovery</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Networking & Content Delivery</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> VPC (Virtual Private Cloud)</li>
+                        <li><i class="fas fa-check"></i> Route 53 (DNS Service)</li>
+                        <li><i class="fas fa-check"></i> CloudFront (CDN)</li>
+                        <li><i class="fas fa-check"></i> Direct Connect</li>
+                        <li><i class="fas fa-check"></i> VPN Connections</li>
+                        <li><i class="fas fa-check"></i> Security Groups & NACLs</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Database Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> RDS (Relational Database Service)</li>
+                        <li><i class="fas fa-check"></i> DynamoDB (NoSQL)</li>
+                        <li><i class="fas fa-check"></i> Redshift (Data Warehousing)</li>
+                        <li><i class="fas fa-check"></i> Aurora (MySQL/PostgreSQL Compatible)</li>
+                        <li><i class="fas fa-check"></i> ElastiCache (In-memory Caching)</li>
+                        <li><i class="fas fa-check"></i> Database Migration Service</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Security & Monitoring</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> IAM Best Practices</li>
+                        <li><i class="fas fa-check"></i> KMS (Key Management Service)</li>
+                        <li><i class="fas fa-check"></i> CloudTrail for Auditing</li>
+                        <li><i class="fas fa-check"></i> CloudWatch for Monitoring</li>
+                        <li><i class="fas fa-check"></i> AWS Config for Compliance</li>
+                        <li><i class="fas fa-check"></i> Security Hub & GuardDuty</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>DevOps & Automation</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> CodeCommit (Git Repositories)</li>
+                        <li><i class="fas fa-check"></i> CodeBuild & CodeDeploy</li>
+                        <li><i class="fas fa-check"></i> CodePipeline (CI/CD)</li>
+                        <li><i class="fas fa-check"></i> CloudFormation (Infrastructure as Code)</li>
+                        <li><i class="fas fa-check"></i> OpsWorks (Configuration Management)</li>
+                        <li><i class="fas fa-check"></i> Elastic Container Service (ECS)</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category aws-category">
+                    <h3>Architecture & Best Practices</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Well-Architected Framework</li>
+                        <li><i class="fas fa-check"></i> High Availability Design</li>
+                        <li><i class="fas fa-check"></i> Fault Tolerance Strategies</li>
+                        <li><i class="fas fa-check"></i> Cost Optimization Techniques</li>
+                        <li><i class="fas fa-check"></i> Performance Optimization</li>
+                        <li><i class="fas fa-check"></i> Migration Strategies to AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Excel Syllabus -->
+        <div class="syllabus-content" id="excel-syllabus">
+            <div class="syllabus-header">
+                <div class="syllabus-icon excel-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h2 class="syllabus-title">Advanced Excel Syllabus</h2>
+                <p>Professional Excel training covering formulas, data analysis, visualization, and automation</p>
+            </div>
+            
+            <div class="syllabus-grid">
+                <div class="topic-category excel-category">
+                    <h3>Excel Fundamentals</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Interface & Navigation</li>
+                        <li><i class="fas fa-check"></i> Workbook & Worksheet Management</li>
+                        <li><i class="fas fa-check"></i> Data Entry & Editing Techniques</li>
+                        <li><i class="fas fa-check"></i> Cell Formatting & Styles</li>
+                        <li><i class="fas fa-check"></i> Custom Number Formats</li>
+                        <li><i class="fas fa-check"></i> Conditional Formatting</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Formulas & Functions</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Basic Mathematical Functions</li>
+                        <li><i class="fas fa-check"></i> Logical Functions (IF, AND, OR)</li>
+                        <li><i class="fas fa-check"></i> Lookup Functions (VLOOKUP, HLOOKUP)</li>
+                        <li><i class="fas fa-check"></i> INDEX & MATCH Combination</li>
+                        <li><i class="fas fa-check"></i> Text Functions (LEFT, RIGHT, MID, CONCAT)</li>
+                        <li><i class="fas fa-check"></i> Date & Time Functions</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Data Analysis</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sorting & Filtering Data</li>
+                        <li><i class="fas fa-check"></i> Advanced Filter Techniques</li>
+                        <li><i class="fas fa-check"></i> Data Validation Rules</li>
+                        <li><i class="fas fa-check"></i> Remove Duplicates</li>
+                        <li><i class="fas fa-check"></i> Text to Columns</li>
+                        <li><i class="fas fa-check"></i> Flash Fill for Smart Data Entry</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Pivot Tables & Charts</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Creating & Modifying Pivot Tables</li>
+                        <li><i class="fas fa-check"></i> Grouping & Calculated Fields</li>
+                        <li><i class="fas fa-check"></i> Pivot Charts & Slicers</li>
+                        <li><i class="fas fa-check"></i> Timeline Filters</li>
+                        <li><i class="fas fa-check"></i> Data Model & Relationships</li>
+                        <li><i class="fas fa-check"></i> Power Pivot Introduction</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Chart Types & Best Practices</li>
+                        <li><i class="fas fa-check"></i> Combo Charts & Secondary Axis</li>
+                        <li><i class="fas fa-check"></i> Sparklines for In-cell Charts</li>
+                        <li><i class="fas fa-check"></i> Conditional Formatting with Formulas</li>
+                        <li><i class="fas fa-check"></i> Data Bars & Color Scales</li>
+                        <li><i class="fas fa-check"></i> Dashboard Creation</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Advanced Functions</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> SUMIFS, COUNTIFS, AVERAGEIFS</li>
+                        <li><i class="fas fa-check"></i> OFFSET & INDIRECT Functions</li>
+                        <li><i class="fas fa-check"></i> Array Formulas</li>
+                        <li><i class="fas fa-check"></i> XLOOKUP (Modern Alternative)</li>
+                        <li><i class="fas fa-check"></i> FILTER & SORT Functions</li>
+                        <li><i class="fas fa-check"></i> UNIQUE & SEQUENCE Functions</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Automation & Macros</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Macro Recording & Editing</li>
+                        <li><i class="fas fa-check"></i> VBA Introduction</li>
+                        <li><i class="fas fa-check"></i> Creating Custom Functions</li>
+                        <li><i class="fas fa-check"></i> Form Controls & ActiveX</li>
+                        <li><i class="fas fa-check"></i> Data Import from External Sources</li>
+                        <li><i class="fas fa-check"></i> Power Query for Data Transformation</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-category excel-category">
+                    <h3>Business Applications</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Financial Modeling</li>
+                        <li><i class="fas fa-check"></i> Budgeting & Forecasting</li>
+                        <li><i class="fas fa-check"></i> Sales Analysis & Reporting</li>
+                        <li><i class="fas fa-check"></i> Inventory Management</li>
+                        <li><i class="fas fa-check"></i> Project Planning with Gantt Charts</li>
+                        <li><i class="fas fa-check"></i> Data Analysis for Decision Making</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-item active">
+                    <p class="testimonial-text">Sachin's Linux training transformed our technical team's capabilities. His depth of knowledge and practical teaching methodology made complex concepts accessible. The hands-on approach ensured immediate application in our projects.</p>
+                    <p class="testimonial-author">iamneo, Coimbatore</p>
+                    <p class="testimonial-org">Senior Technical Manager</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-text">We engaged Sachin for multiple corporate training programs. His expertise in Linux, AWS, and DevOps is exceptional. The quality of training delivery and post-session support exceeds industry standards.</p>
+                    <p class="testimonial-author">Mildain Solutions, Noida</p>
+                    <p class="testimonial-org">Director of Training</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-text">Sachin delivered specialized Linux training for our Air Force officers with military precision. His understanding of security protocols and system hardening for defense applications is truly commendable.</p>
+                    <p class="testimonial-author">DIT Delhi, Indian Air Force</p>
+                    <p class="testimonial-org">Director of IT Operations</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-text">As part of our certification program, Sachin delivered outstanding Linux and SQL training online. His approach to complex topics and student engagement resulted in exceptional completion rates and skill development.</p>
+                    <p class="testimonial-author">Henry Harvin Education</p>
+                    <p class="testimonial-org">Program Director</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-text">Sachin's training at our engineering college set new benchmarks. Students gained practical skills that directly enhanced their employability. His teaching methodology combines theory with real-world applications perfectly.</p>
+                    <p class="testimonial-author">Sri Krishna College of Technology</p>
+                    <p class="testimonial-org">Head of Department, CSE</p>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <span class="nav-dot active" data-slide="0"></span>
+                <span class="nav-dot" data-slide="1"></span>
+                <span class="nav-dot" data-slide="2"></span>
+                <span class="nav-dot" data-slide="3"></span>
+                <span class="nav-dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sachin Kumar</h3>
+                    <p style="margin-bottom: 20px; font-size: 1rem; color: #ddd;">Professional IT Trainer with expertise in Linux administration, cloud computing, database management, and corporate training delivery.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/917888719163" class="social-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:sachinkr1620@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Details</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+917888719163"><i class="fas fa-phone"></i> +91 78887 19163</a></li>
+                        <li><a href="mailto:sachinkr1620@gmail.com"><i class="fas fa-envelope"></i> sachinkr1620@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Noida, India</a></li>
+                        <li><a href="#"><i class="fas fa-briefcase"></i> Server Administrator</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> Freelance Trainer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Training Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#linux-syllabus"><i class="fab fa-linux"></i> Linux Administration</a></li>
+                        <li><a href="#sql-syllabus"><i class="fas fa-database"></i> RDBMS & SQL</a></li>
+                        <li><a href="#aws-syllabus"><i class="fab fa-aws"></i> AWS Cloud</a></li>
+                        <li><a href="#excel-syllabus"><i class="fas fa-file-excel"></i> Advanced Excel</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Sachin Kumar - Professional IT Trainer. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Syllabus Tab Switching
+            const syllabusTabs = document.querySelectorAll('.syllabus-tab');
+            const syllabusContents = document.querySelectorAll('.syllabus-content');
+            
+            // Show Linux syllabus by default
+            showSyllabus('linux-syllabus');
+            
+            // Add click events to syllabus tabs
+            syllabusTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove active class from all tabs
+                    syllabusTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show the selected syllabus
+                    showSyllabus(targetId);
+                    
+                    // Scroll to syllabus section
+                    document.getElementById(targetId).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            function showSyllabus(syllabusId) {
+                // Hide all syllabus contents
+                syllabusContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected syllabus
+                document.getElementById(syllabusId).classList.add('active');
+            }
+            
+            // Handle expertise tag clicks
+            const expertiseTags = document.querySelectorAll('.expertise-tag');
+            expertiseTags.forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const targetId = href.substring(1); // Remove # symbol
+                    
+                    // Find and click the corresponding syllabus tab
+                    const correspondingTab = document.querySelector(`.syllabus-tab[data-target="${targetId}"]`);
+                    if (correspondingTab) {
+                        correspondingTab.click();
+                    }
+                });
+            });
+            
+            // Testimonial slider
+            const testimonialItems = document.querySelectorAll('.testimonial-item');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showTestimonialSlide(index) {
+                // Hide all testimonials
+                testimonialItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the selected testimonial
+                testimonialItems[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonialSlide(index);
+                    resetTestimonialInterval();
+                });
+            });
+            
+            // Auto slide testimonials
+            function startTestimonialInterval() {
+                slideInterval = setInterval(() => {
+                    let nextSlide = (currentSlide + 1) % testimonialItems.length;
+                    showTestimonialSlide(nextSlide);
+                }, 4000);
+            }
+            
+            function resetTestimonialInterval() {
+                clearInterval(slideInterval);
+                startTestimonialInterval();
+            }
+            
+            startTestimonialInterval();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // If it's a syllabus link, let the tab switching handle it
+                    if (href.includes('syllabus')) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    if (href === '#') return;
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Stats counting animation
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target;
+                        const finalValue = statNumber.textContent;
+                        const duration = 1500;
+                        const increment = finalValue.replace('+', '') / (duration / 16);
+                        let currentValue = 0;
+                        
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= parseInt(finalValue.replace('+', ''))) {
+                                statNumber.textContent = finalValue;
+                                clearInterval(timer);
+                            } else {
+                                statNumber.textContent = Math.floor(currentValue) + (finalValue.includes('+') ? '+' : '');
+                            }
+                        }, 16);
+                        
+                        observer.unobserve(statNumber);
+                    }
+                });
+            }, observerOptions);
+            
+            statNumbers.forEach(statNumber => {
+                observer.observe(statNumber);
+            });
+            
+            // WhatsApp and Email links
+            const whatsappBtn = document.querySelector('a[href*="wa.me"]');
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function(e) {
+                    // Already set to open in new tab
+                });
+            }
+            
+            const emailBtn = document.querySelector('a[href^="mailto"]');
+            if (emailBtn) {
+                emailBtn.addEventListener('click', function(e) {
+                    // Already set to open default email client
+                });
+            }
+            
+            // Set correct experience years
+            const experienceHighlights = document.querySelectorAll('.highlight');
+            experienceHighlights.forEach(el => {
+                if(el.textContent.includes('7+ years')) {
+                    el.textContent = '3+ years';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
